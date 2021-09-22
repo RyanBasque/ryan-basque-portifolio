@@ -3,7 +3,6 @@ interface HeaderBarProps {
     showBlur: boolean;
 }
 
-
 export const PageHeaderContainer = styled.header<HeaderBarProps>`
     background-color: ${({ showBlur }) => showBlur && 'rgba(0, 0, 0, 0.06)'};
 
