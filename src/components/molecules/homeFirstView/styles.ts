@@ -19,6 +19,10 @@ export const ResponsiveContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    @media(min-width: 800px) {
+        flex-direction: row;
+    }
 `;
 
 export const TextContainer = styled.div`
@@ -26,12 +30,22 @@ export const TextContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
 
+    @media(min-width: 800px) {
+        width: 60%;
+        justify-content: center;
+    }
+
     word-wrap: break-word;
     font-family: Lato;
     color: ${colors.black};
     font-weight: 300;
     font-size: 14px;
-    line-height: 132%;
+    line-height: 20px;
+
+    @media(min-width: 800px) {
+        font-size: 20px;
+        line-height: 30px;
+    }
 
     span {
             font-weight: bold;
@@ -46,24 +60,37 @@ export const TextContainer = styled.div`
         color: '#000';
 
         margin-bottom: 5%;
+
+        @media(min-width: 800px) {
+            font-size: 32px;
+            line-height: 45px;
+        }
     }
 
     p {
-        margin-bottom: 2.8%;
+        margin-bottom: 3%;
     }
 `;
 
 export const ImageContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     figure {
         text-align: center;
 
         img {
+            @media(min-width: 800px) {
+                max-height: 500px;
+                max-width: 500px;
+            }
+
             height: 60%;
             width: 60%;
 
-            max-height: 450px;
-            max-width: 450px;
+            max-height: 300px;
+            max-width: 300px;
         }
     }
 `;
