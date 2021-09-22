@@ -1,18 +1,27 @@
 import styled from 'styled-components';
+interface HeaderBarProps {
+    showBlur: boolean;
+}
 
-export const PageHeaderContainer = styled.header`
+
+export const PageHeaderContainer = styled.header<HeaderBarProps>`
+    background-color: ${({ showBlur }) => showBlur && 'rgba(0, 0, 0, 0.06)'};
+
     height: auto;
-
-    position: fixed;
+    width: 100%;
 
     display: flex;
     justify-content: flex-start;
 
-    padding: 5px 20px;
+    position: fixed;
+
+    padding: 10px 25px;
+
+    transition: background-color 0.5s;
 `;
 
 export const PageMainContainer = styled.main`
-    height: auto;
+    height: 100vh;
 
-    padding-top: 40px;
+    padding-top: 50px;
 `;

@@ -1,13 +1,14 @@
 import React from 'react';
+
+import { HomeFirstView, HomeSecondView } from '../../components/molecules';
 import { PageDefault } from '../../components/organisms';
 
 const Home = () => {
 
     return (
         <PageDefault>
-            <div style={{height: 1000, width: 300, backgroundColor: 'red'}}>
-
-            </div>
+            <HomeFirstView />
+            <HomeSecondView />
         </PageDefault>
     );
 };
