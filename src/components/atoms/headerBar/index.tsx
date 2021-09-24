@@ -6,8 +6,8 @@ const HeaderBar = () => {
 
     window.addEventListener('scroll', () => {
         const topHeight = window.pageYOffset;
-        const elementHeight = document.getElementById('secondContainer')?.offsetHeight;
-        elementHeight && setShowBack(topHeight > elementHeight - 40);
+        const elementHeight = document.getElementById('firstContainer')?.offsetHeight;
+        elementHeight && setShowBack(topHeight > elementHeight + 40);
     });
     return (
         <Fragment>
