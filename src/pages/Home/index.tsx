@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { toast } from "react-toastify";
+
 import { HomeFirstView, HomeSecondView } from "../../components/molecules";
 import { PageDefault } from "../../components/organisms";
 import { ExperienceData } from "../../models/experienceData";
@@ -10,20 +12,26 @@ const Home = () => {
   const [secondViewData, setSecondViewData] = useState<ExperienceData[]>([]);
 
   useEffect(() => {
-    (async () => {
-      try {
-        await getData("experience-data", (data: ExperienceData[]) => {
-          const response = [];
-          for (let value in data) {
-            response.push(data[value]);
-          }
+    try {
+      getData("experience-data", (data: ExperienceData[]) => {
+        const response = [];
+        for (let value in data) {
+          response.push(data[value]);
+        }
 
-          setSecondViewData(response);
-        });
-      } catch (error: any) {
-        console.error(error.message);
-      }
-    })();
+        setSecondViewData(response);
+      });
+    } catch (error: any) {
+      toast("Ops! Ocorreu um erro ;(", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        type: "error",
+      });
+    }
   }, []);
 
   return (
