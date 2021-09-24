@@ -1,35 +1,25 @@
-import React, { Fragment }  from 'react';
-import { ExperienceArticle } from '../../atoms';
+import React, { Fragment } from "react";
+import { ExperienceArticle } from "../../atoms";
 
-import { 
-    Container, 
-    ExperienceContainer, 
-    TitleContainer
-} from './styles';
+import { Container, ExperienceContainer, TitleContainer } from "./styles";
 
-const HomeSecondView = () => {
+import { SecondViewProps } from "./types";
 
-    return (
-        <Fragment>
-            <Container>
-                <TitleContainer>
-                    <h1>Experiência profissional</h1>
-                    <p>Agosto de 2019 - atual</p>
-                </TitleContainer>
-                <ExperienceContainer>
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                    <ExperienceArticle />
-                </ExperienceContainer>
-            </Container>
-        </Fragment>
-    )
+const HomeSecondView = ({ data }: SecondViewProps) => {
+  return (
+    <Fragment>
+      <Container>
+        <TitleContainer>
+          <h1>Experiência profissional</h1>
+          <p>Agosto de 2019 - atual</p>
+        </TitleContainer>
+        <ExperienceContainer>
+          {data &&
+            data.map((element, index) => <ExperienceArticle key={index} />)}
+        </ExperienceContainer>
+      </Container>
+    </Fragment>
+  );
 };
 
 export default HomeSecondView;

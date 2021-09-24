@@ -1,29 +1,50 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, child, get } from "firebase/database";
+import { getDatabase, ref, set, onValue } from "firebase/database";
+
+import { generateId } from '../utils/idGenerator';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCY1gvzEavy8dMZezjqk8EDkXWOezRa-1c",
-    authDomain: "ryan-basque-portifolio-fa8f4.firebaseapp.com", 
-    databaseURL: "https://ryan-basque-portifolio-fa8f4-default-rtdb.firebaseio.com",
-    projectId: "ryan-basque-portifolio-fa8f4",
-    storageBucket: "ryan-basque-portifolio-fa8f4.appspot.com",
-    messagingSenderId: "313152388697",
-    appId: "1:313152388697:web:6a2c615e915f1ceb63fb48"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}.firebaseapp.com`, 
+    databaseURL: `https://${process.env.REACT_APP_FIREBASE_PROJECT_ID}-default-rtdb.firebaseio.com`,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}.appspot.com`,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 initializeApp(firebaseConfig);
 
-const database = ref(getDatabase());
+const database = getDatabase();
 
-const getData = async (path: string) => {
-    try {
-        const response = get(child(database, path));
-        return response;
-    } catch (error) {
-        throw new Error('Ocorreu um erro de requisição! :(');
-    };
+const getData = (path: string) => {
+    const response: any[] = [];
+    const starCountRef = ref(database, `${path}/`);
+    
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      for (let value in data) {
+        response.push(data[value]);
+      }
+    });
+
+    return response;
+}
+
+const postData = (path: string, value: any) => {
+    const db = getDatabase();
+    const objectId = generateId(); 
+
+    set(
+        ref(db, path + '/' + objectId),
+        {
+            ...value,
+            id: objectId
+        },
+    );
 }
 
 export {
     getData,
+    postData,
 }
