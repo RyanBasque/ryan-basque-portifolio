@@ -18,10 +18,11 @@ export const ResponsiveContainer = styled.div`
     
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media(min-width: 800px) {
         flex-direction: row;
+        justify-content: space-between;
     }
 `;
 

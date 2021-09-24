@@ -13,7 +13,7 @@ import arrowIcon from '../../../assets/icons/arrow-down.svg';
 
 const HomeFirstView = () => {
 
-    const scrollToSecondView = () => {
+    const scrollToSecondView = (): void => {
         const elementHeight = document.getElementById('firstContainer')?.offsetHeight;
         elementHeight && window.scrollTo(0, elementHeight + 60);
     };

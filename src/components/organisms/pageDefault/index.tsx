@@ -7,7 +7,7 @@ import { PageDefaultProps } from './types';
 const PageDefault = ({ children }: PageDefaultProps) => {
     const [fadeBlur, setFadeBlur] = useState(false);
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', (): void => {
         const topHeight = window.pageYOffset;
         setFadeBlur(topHeight > 50)
     });
