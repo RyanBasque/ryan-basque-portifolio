@@ -14,8 +14,7 @@ const HomeSecondView = ({ data }: SecondViewProps) => {
           <p>Agosto de 2019 - atual</p>
         </TitleContainer>
         <ExperienceContainer>
-          {data &&
-            data.map((element, index) => <ExperienceArticle key={index} />)}
+          {data && data.map((e) => <ExperienceArticle key={e.id} />)}
         </ExperienceContainer>
       </Container>
     </Fragment>
