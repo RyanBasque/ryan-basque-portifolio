@@ -20,6 +20,8 @@
   <body>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+      //import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-analytics.js";
+      
       const firebaseConfig = {
         apiKey: "AIzaSyCY1gvzEavy8dMZezjqk8EDkXWOezRa-1c",
         authDomain: "ryan-basque-portifolio-fa8f4.firebaseapp.com",
@@ -29,7 +31,8 @@
         messagingSenderId: "313152388697",
         appId: "1:313152388697:web:6a2c615e915f1ceb63fb48"
       };
-          const app = initializeApp(firebaseConfig);
+      const app = initializeApp(firebaseConfig);
+      //const analytics = getAnalytics(app);
     </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>

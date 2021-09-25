@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, set, onValue } from "firebase/database";
+import { getAnalytics } from 'firebase/analytics';
 
 import { generateId } from '../utils/idGenerator';
 
@@ -13,7 +14,8 @@ const firebaseConfig = {
     appId: '1:313152388697:web:6a2c615e915f1ceb63fb48',
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+getAnalytics(app);
 
 const database = getDatabase();
 
