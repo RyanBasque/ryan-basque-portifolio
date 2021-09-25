@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { colors } from '../../../styles/colors';
 interface HeaderBarProps {
     showBlur: boolean;
+    showBlack: boolean;
 }
 
 export const PageHeaderContainer = styled.header<HeaderBarProps>`
-    background-color: ${({ showBlur }) => showBlur && 'rgba(0, 0, 0, 0.06)'};
+    background-color: ${({ showBlur, showBlack }) => (showBlur && showBlack) ? 'rgba(0, 0, 0, 0.08)': 'rgba(0, 0, 0, 0.06)'};
     z-index: 10;
 
     height: auto;
@@ -18,6 +20,8 @@ export const PageHeaderContainer = styled.header<HeaderBarProps>`
     padding: 10px 25px;
 
     transition: background-color 0.5s;
+
+    color: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
 `;
 
 export const PageMainContainer = styled.main`
