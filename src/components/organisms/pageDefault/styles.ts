@@ -5,6 +5,7 @@ interface HeaderBarProps {
 
 export const PageHeaderContainer = styled.header<HeaderBarProps>`
     background-color: ${({ showBlur }) => showBlur && 'rgba(0, 0, 0, 0.06)'};
+    z-index: 10;
 
     height: auto;
     width: 100%;
@@ -23,4 +24,6 @@ export const PageMainContainer = styled.main`
     height: 100vh;
 
     padding-top: 50px;
+
+    z-index: -1;
 `;
