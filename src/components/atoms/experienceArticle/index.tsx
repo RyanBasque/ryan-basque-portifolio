@@ -19,7 +19,7 @@ const ExperienceContainer = ({
 }: ExperienceArticleProps) => {
   return (
     <Fragment>
-      <ExperienceArticleContainer>
+      <ExperienceArticleContainer data-aos="fade-right">
         <ExperiencePainel>
           <TitleContainer>
             <ExperienceTitle>{title}</ExperienceTitle>
@@ -30,7 +30,7 @@ const ExperienceContainer = ({
       </ExperienceArticleContainer>
       {showDot && (
         <DotContainer>
-          <div />
+          <div data-aos="fade-right" />
         </DotContainer>
       )}
     </Fragment>
