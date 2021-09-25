@@ -15,9 +15,10 @@ const HomeSecondView = ({ data }: SecondViewProps) => {
         </TitleContainer>
         <ExperienceContainer>
           {data &&
-            data.map(({ id, title, description, date }, index) => {
+            data.map(({ id, title, description, date, count }, index) => {
               return (
                 <ExperienceArticle
+                  count={count}
                   key={id}
                   id={id}
                   showDot={index !== data.length - 1}

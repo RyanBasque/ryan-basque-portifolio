@@ -3,4 +3,5 @@ export interface ExperienceData {
     description: string;
     date: string;
     id: string;
+    count: number;
 }

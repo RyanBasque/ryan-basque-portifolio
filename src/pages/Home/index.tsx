@@ -14,12 +14,19 @@ const Home = () => {
   useEffect(() => {
     try {
       getData("experience-data", (data: ExperienceData[]) => {
-        const response = [];
+        const response: ExperienceData[] = [];
+
         for (let value in data) {
           response.push(data[value]);
         }
 
-        setSecondViewData(response);
+        const compare = (a: ExperienceData, b: ExperienceData) => {
+          if (a.count > b.count) return 1;
+          if (b.count > a.count) return -1;
+          return 0;
+        };
+
+        setSecondViewData(response.sort(compare));
       });
     } catch (error: any) {
       toast("Ops! Ocorreu um erro ;(", {
