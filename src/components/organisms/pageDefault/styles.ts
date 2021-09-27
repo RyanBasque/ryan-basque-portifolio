@@ -6,7 +6,8 @@ interface HeaderBarProps {
 }
 
 export const PageHeaderContainer = styled.header<HeaderBarProps>`
-    background-color: ${({ showBlur, showBlack }) => (showBlur && showBlack) ? 'rgba(0, 0, 0, 0.08)': 'rgba(0, 0, 0, 0.06)'};
+    background-color: ${({ showBlur }) => (showBlur) && 'rgba(0, 0, 0, 0.06)'};
+    background-color: ${({ showBlack }) => (showBlack) && 'rgba(0, 0, 0, 0.08)'};
     z-index: 10;
 
     height: auto;

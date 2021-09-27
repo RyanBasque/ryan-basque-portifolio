@@ -12,6 +12,7 @@ const PageDefault = ({ children }: PageDefaultProps) => {
     const topHeight = window.pageYOffset;
     const elementHeight =
       document.getElementById("firstContainer")?.offsetHeight;
+
     elementHeight && setShowBlack(topHeight > elementHeight + 40);
     setFadeBlur(topHeight > 50);
   });
