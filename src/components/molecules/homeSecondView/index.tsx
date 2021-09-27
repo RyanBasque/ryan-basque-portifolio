@@ -30,8 +30,8 @@ const HomeSecondView = ({ data }: SecondViewProps) => {
                   />
                 );
               })
-            : skeletonController.map(() => {
-                return <ExperienceSkeletonLoading />;
+            : skeletonController.map((index) => {
+                return <ExperienceSkeletonLoading key={index} />;
               })}
         </ExperienceContainer>
       </Container>
