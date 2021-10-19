@@ -3,7 +3,7 @@ import { colors } from '../../../styles/colors';
 
 export const ExperienceArticleContainer = styled.article`
     width: 100%;
-
+    
     border-left: solid 2px ${colors.white};
 
     display: flex;
@@ -59,6 +59,32 @@ export const DescriptionContainer = styled.span`
     @media(min-width: 800px) {
         font-size: 17px;
     }
+`;
+
+export const SeeMoreContainer = styled.button`
+    background-color: ${colors.black};
+
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+        color: ${colors.white};
+
+        height: 1rem;
+        width: 1rem;
+
+        margin-left: 0.3rem;
+    }
+`;
+
+export const SeeMore = styled.span`
+    font-size: 1rem;
+    color: ${colors.white};
+    font-weight: 300;
 `;
 
 export const DotContainer = styled.div`

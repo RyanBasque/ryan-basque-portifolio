@@ -8,8 +8,9 @@ import {
   TextContainer,
 } from "./styles";
 
+import { AiOutlineArrowDown } from "react-icons/ai";
+
 import profilePic from "../../../assets/images/profile-pic.png";
-import arrowIcon from "../../../assets/icons/arrow-down.svg";
 
 const HomeFirstView = () => {
   const scrollToSecondView = (): void => {
@@ -55,7 +56,7 @@ const HomeFirstView = () => {
         </ResponsiveContainer>
         <ButtonContainer>
           <button onClick={scrollToSecondView}>
-            <img src={arrowIcon} alt="Arrow Down" />
+            <AiOutlineArrowDown />
           </button>
         </ButtonContainer>
       </Container>

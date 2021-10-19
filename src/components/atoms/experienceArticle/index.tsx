@@ -8,14 +8,19 @@ import {
   ExperiencePainel,
   ExperienceSubTitle,
   ExperienceTitle,
+  SeeMore,
+  SeeMoreContainer,
   TitleContainer,
 } from "./styles";
+
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const ExperienceContainer = ({
   showDot,
   title,
   description,
   date,
+  project,
 }: ExperienceArticleProps) => {
   return (
     <Fragment>
@@ -26,6 +31,12 @@ const ExperienceContainer = ({
             <ExperienceSubTitle>{date}</ExperienceSubTitle>
           </TitleContainer>
           <DescriptionContainer>{description}</DescriptionContainer>
+          {project && (
+            <SeeMoreContainer>
+              <SeeMore>Veja mais</SeeMore>
+              <AiOutlineArrowRight />
+            </SeeMoreContainer>
+          )}
         </ExperiencePainel>
       </ExperienceArticleContainer>
       {showDot && (

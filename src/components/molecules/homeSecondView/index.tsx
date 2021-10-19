@@ -17,19 +17,22 @@ const HomeSecondView = ({ data }: SecondViewProps) => {
         </TitleContainer>
         <ExperienceContainer>
           {data.length
-            ? data.map(({ id, title, description, date, count }, index) => {
-                return (
-                  <ExperienceArticle
-                    count={count}
-                    key={id}
-                    id={id}
-                    showDot={index !== data.length - 1}
-                    title={title}
-                    description={description}
-                    date={date}
-                  />
-                );
-              })
+            ? data.map(
+                ({ id, title, description, date, count, project }, index) => {
+                  return (
+                    <ExperienceArticle
+                      count={count}
+                      key={id}
+                      id={id}
+                      showDot={index !== data.length - 1}
+                      title={title}
+                      description={description}
+                      date={date}
+                      project={project}
+                    />
+                  );
+                }
+              )
             : skeletonController.map((index) => {
                 return <ExperienceSkeletonLoading key={index} />;
               })}

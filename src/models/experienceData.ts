@@ -4,4 +4,5 @@ export interface ExperienceData {
     date: string;
     id: string;
     count: number;
+    project?: boolean;
 }

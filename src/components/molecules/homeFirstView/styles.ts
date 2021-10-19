@@ -114,5 +114,12 @@ export const ButtonContainer = styled.div`
 
         border-radius: 100%;
         border: none;
+
+        svg {
+            height: 1.3rem;
+            width: 1.3rem;
+
+            color: ${colors.black};
+        }
     }
 `;
