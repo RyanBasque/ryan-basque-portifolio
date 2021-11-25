@@ -7,27 +7,27 @@ import { PageDefault } from "../../components/organisms";
 import { ExperienceData } from "../../models/experienceData";
 
 import { getData } from "../../services/firebase";
+import { experienceFormatter } from "./../../utils/dataFormater";
 
 const Home = () => {
-  const [secondViewData, setSecondViewData] = useState<ExperienceData[]>([]);
+  const [experienceData, setExperienceData] = useState<ExperienceData[]>([]);
+  const [fadeBlur, setFadeBlur] = useState<boolean>(false);
+  const [showBlack, setShowBlack] = useState<boolean>(false);
+
+  window.addEventListener("scroll", (): void => {
+    const topHeight = window.pageYOffset;
+    const elementHeight =
+      document.getElementById("firstContainer")?.offsetHeight;
+
+    elementHeight && setShowBlack(topHeight > elementHeight + 40);
+    setFadeBlur(topHeight > 50);
+  });
 
   useEffect(() => {
     try {
-      getData("experience-data", (data: ExperienceData[]) => {
-        const response: ExperienceData[] = [];
-
-        for (let value in data) {
-          response.push(data[value]);
-        }
-
-        const compare = (a: ExperienceData, b: ExperienceData) => {
-          if (a.count > b.count) return 1;
-          if (b.count > a.count) return -1;
-          return 0;
-        };
-
-        setSecondViewData(response.sort(compare));
-      });
+      getData("experience-data", (data: ExperienceData[]) =>
+        setExperienceData(experienceFormatter(data))
+      );
     } catch (error: any) {
       toast("Ops! Ocorreu um erro ;(", {
         position: "top-right",
@@ -42,9 +42,9 @@ const Home = () => {
   }, []);
 
   return (
-    <PageDefault>
+    <PageDefault fadeHeaderBlur={fadeBlur} showHeaderInBlack={showBlack}>
       <HomeFirstView />
-      <HomeSecondView data={secondViewData} />
+      <HomeSecondView data={experienceData} />
     </PageDefault>
   );
 };

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 interface HeaderBarProps {
-    showBlur: boolean;
-    showBlack: boolean;
+    showBlur: boolean | undefined;
+    showBlack: boolean | undefined;
 }
 
 export const PageHeaderContainer = styled.header<HeaderBarProps>`
