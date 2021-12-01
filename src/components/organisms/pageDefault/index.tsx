@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { HeaderBar } from "../../atoms";
 
 import { PageHeaderContainer, PageMainContainer } from "./styles";

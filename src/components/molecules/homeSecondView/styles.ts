@@ -6,6 +6,8 @@ export const Container = styled.section`
     min-height: calc(100% + 50px);
 
     background-color: ${colors.black};
+
+    padding-bottom: 30px;
 `;
 
 export const TitleContainer = styled.span`

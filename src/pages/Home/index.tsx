@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import { toast } from "react-toastify";
 
-import { HomeFirstView, HomeSecondView } from "../../components/molecules";
+import {
+  HomeFirstView,
+  HomeSecondView,
+  HomeThirdView,
+} from "../../components/molecules";
 import { PageDefault } from "../../components/organisms";
 import { ExperienceData } from "../../models/experienceData";
 
@@ -14,14 +18,31 @@ const Home = () => {
   const [fadeBlur, setFadeBlur] = useState<boolean>(false);
   const [showBlack, setShowBlack] = useState<boolean>(false);
 
-  window.addEventListener("scroll", (): void => {
-    const topHeight = window.pageYOffset;
-    const elementHeight =
-      document.getElementById("firstContainer")?.offsetHeight;
+  useEffect(() => {
+    const handleScroll = () => {
+      const offSetHeightDistance = window.pageYOffset;
+      const containerOne = document.querySelector("#firstContainer");
+      const containerTwo = document.querySelector("#secondContainer");
 
-    elementHeight && setShowBlack(topHeight > elementHeight + 40);
-    setFadeBlur(topHeight > 50);
-  });
+      if (containerOne && containerTwo) {
+        const containerOneHeight = containerOne.getBoundingClientRect().height;
+        const containerTwoHeight = containerTwo.getBoundingClientRect().height;
+
+        if (offSetHeightDistance > 40) setFadeBlur(true);
+        else setFadeBlur(false);
+
+        if (offSetHeightDistance > containerOneHeight - 10) setShowBlack(true);
+        else setShowBlack(false);
+
+        if (offSetHeightDistance > containerOneHeight + containerTwoHeight)
+          setShowBlack(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [showBlack]);
 
   useEffect(() => {
     try {
@@ -45,6 +66,7 @@ const Home = () => {
     <PageDefault fadeHeaderBlur={fadeBlur} showHeaderInBlack={showBlack}>
       <HomeFirstView />
       <HomeSecondView data={experienceData} />
+      <HomeThirdView />
     </PageDefault>
   );
 };
