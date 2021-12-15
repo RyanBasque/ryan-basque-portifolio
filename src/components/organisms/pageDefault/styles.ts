@@ -14,7 +14,7 @@ export const PageHeaderContainer = styled.header<HeaderBarProps>`
     width: 100%;
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     position: fixed;
 

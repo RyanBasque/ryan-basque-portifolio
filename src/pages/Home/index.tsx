@@ -8,15 +8,44 @@ import {
   HomeThirdView,
 } from "../../components/molecules";
 import { PageDefault } from "../../components/organisms";
-import { ExperienceData } from "../../models/experienceData";
+import { ExperienceDataType } from "../../models/experienceData";
+import { ProjectDataType } from "./../../models/projectsData";
 
 import { getData } from "../../services/firebase";
-import { experienceFormatter } from "./../../utils/dataFormater";
+import {
+  experienceFormatter,
+  projectsDataFormatter,
+} from "./../../utils/dataFormater";
 
 const Home = () => {
-  const [experienceData, setExperienceData] = useState<ExperienceData[]>([]);
+  const [experienceData, setExperienceData] = useState<ExperienceDataType[]>(
+    []
+  );
+  const [projectsData, setProjectsData] = useState<ProjectDataType[]>([]);
   const [fadeBlur, setFadeBlur] = useState<boolean>(false);
   const [showBlack, setShowBlack] = useState<boolean>(false);
+
+  useEffect(() => {
+    try {
+      getData("experience-data", (data: ExperienceDataType[]) => {
+        setExperienceData(experienceFormatter(data));
+      });
+
+      getData("projects", (data: ProjectDataType[]) => {
+        setProjectsData(projectsDataFormatter(data));
+      });
+    } catch (error: any) {
+      toast("Ops! Ocorreu um erro ;(", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        type: "error",
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,29 +73,11 @@ const Home = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [showBlack]);
 
-  useEffect(() => {
-    try {
-      getData("experience-data", (data: ExperienceData[]) =>
-        setExperienceData(experienceFormatter(data))
-      );
-    } catch (error: any) {
-      toast("Ops! Ocorreu um erro ;(", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        type: "error",
-      });
-    }
-  }, []);
-
   return (
     <PageDefault fadeHeaderBlur={fadeBlur} showHeaderInBlack={showBlack}>
       <HomeFirstView />
       <HomeSecondView data={experienceData} />
-      {/* <HomeThirdView /> */}
+      <HomeThirdView data={projectsData} />
     </PageDefault>
   );
 };

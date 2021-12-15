@@ -1,5 +1,5 @@
-import { ExperienceData } from "../../../models/experienceData";
+import { ExperienceDataType } from "../../../models/experienceData";
 
 export interface SecondViewProps {
-    data: ExperienceData[];
+    data: ExperienceDataType[];
 }

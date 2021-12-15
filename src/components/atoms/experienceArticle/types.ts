@@ -1,5 +1,5 @@
-import { ExperienceData } from "../../../models/experienceData";
+import { ExperienceDataType } from "../../../models/experienceData";
 
-export interface ExperienceArticleProps extends ExperienceData {
+export interface ExperienceArticleProps extends ExperienceDataType {
     showDot: boolean;
 }
