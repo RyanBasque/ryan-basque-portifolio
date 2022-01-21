@@ -8,6 +8,10 @@ export const HeaderTitle = styled.h1`
 
     transition: color 0.5s;
 
+    @media(max-width: 500px) {
+        font-size: 1.3rem;
+    }
+
     b {
         font-weight: 800;
     }

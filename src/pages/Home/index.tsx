@@ -77,7 +77,7 @@ const Home = () => {
     <PageDefault fadeHeaderBlur={fadeBlur} showHeaderInBlack={showBlack}>
       <HomeFirstView />
       <HomeSecondView data={experienceData} />
-      <HomeThirdView data={projectsData} />
+      {/* <HomeThirdView data={projectsData} /> */}
     </PageDefault>
   );
 };

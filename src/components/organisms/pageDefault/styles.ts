@@ -7,14 +7,14 @@ interface HeaderBarProps {
 
 export const PageHeaderContainer = styled.header<HeaderBarProps>`
     background-color: ${({ showBlur }) => (showBlur) && 'rgba(0, 0, 0, 0.06)'};
-    background-color: ${({ showBlack }) => (showBlack) && 'rgba(0, 0, 0, 0.08)'};
+    background-color: ${({ showBlack }) => (showBlack) && 'rgba(0, 0, 0, 0.3)'};
     z-index: 10;
 
     height: auto;
     width: 100%;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     position: fixed;
 
