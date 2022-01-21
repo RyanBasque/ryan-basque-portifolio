@@ -19,7 +19,7 @@ getAnalytics(app);
 
 const database = getDatabase();
 
-const getData = (path: string, callback: any) => { 
+export const getData = (path: string, callback: any) => { 
     const starCountRef = ref(database, `${path}/`);
     
     onValue(starCountRef, (snapshot) => {
@@ -28,7 +28,7 @@ const getData = (path: string, callback: any) => {
     });
 }
 
-const postData = (path: string, value: any) => {
+export const postData = (path: string, value: any) => {
     const db = getDatabase();
     const objectId = generateId(); 
 
@@ -39,9 +39,4 @@ const postData = (path: string, value: any) => {
             id: objectId
         },
     );
-}
-
-export {
-    getData,
-    postData,
 }

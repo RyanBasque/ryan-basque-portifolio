@@ -28,7 +28,9 @@ export const Container = styled.section`
     }
 `;
 
-export const ProjectsContainer = styled.div``;
+export const ProjectsContainer = styled.div`
+    display: grid;
+`;
 
 export const ProjectsContainerTitle = styled.span`
     padding: 20px 25px 40px 25px;
@@ -66,4 +68,25 @@ export const ProjectsContainerTitle = styled.span`
 export const ProjectsContainerContent = styled.div`
     width: 100%;
     padding: 0 25px 10px 25px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media(min-width: 800px) {
+        grid-template-areas: "a a b c";
+    }
+
+    gap: 2rem;
+
+    .item-0-grid {
+        grid-area: a;
+    }
+
+    .item-1-grid {
+        grid-area: b;
+    } 
+    
+    .item-2-grid {
+        grid-area: c;
+    }
 `;

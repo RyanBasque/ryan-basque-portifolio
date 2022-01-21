@@ -9,6 +9,8 @@ import {
 } from "./styles";
 import { colors } from "./../../../styles/colors";
 import { ThirdViewProps } from "./types";
+import { ProjectApresentation } from "../../atoms";
+import { ProjectDataType } from "../../../models/projectsData";
 
 const HomeThirdView = ({ data }: ThirdViewProps) => {
   return (
@@ -75,7 +77,16 @@ const HomeThirdView = ({ data }: ThirdViewProps) => {
             Melhores <p>&lt;projetos/&gt;</p>
           </h1>
         </ProjectsContainerTitle>
-        <ProjectsContainerContent>opa</ProjectsContainerContent>
+        <ProjectsContainerContent>
+          {data.map((project: ProjectDataType, index) => (
+            <ProjectApresentation
+              index={index}
+              name={project.name}
+              imageUrl={project.imageUrl}
+              background={project.background}
+            />
+          ))}
+        </ProjectsContainerContent>
       </ProjectsContainer>
     </Container>
   );
