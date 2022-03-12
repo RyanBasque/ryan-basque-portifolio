@@ -23,29 +23,26 @@ const HomeFirstView = () => {
     <Fragment>
       <Container id="firstContainer">
         <ResponsiveContainer>
-          <TextContainer data-aos="fade-up-right">
-            <h1>
+          <TextContainer>
+            <h1 data-aos="fade-up" data-aos-duration="500">
               Oi, meu nome é <span>&lt;Ryan Basque/&gt;</span> <br /> Eu{" "}
               <span>penso e construo</span> interfaces de sistemas.
             </h1>
-            <p>
+            <p data-aos="fade-up" data-aos-duration="1000">
               Programador Front-end, entusiasta à área de <span>UX/UI</span> ,
               curioso e determinado.
             </p>
-            <p>
-              Estudo programação web desde os 16 anos, atualmente, tenho 18, com
-              conhecimentos avançados em{" "}
+            <p data-aos="fade-up" data-aos-duration="1500">
+              Estudo programação web desde os 16 anos, atualmente com 19 e me
+              formando na <span>FIAP</span> com conhecimentos avançados em{" "}
               <span>
-                React, React Native, Angular, HTML, CSS, JavaScript, Typescript,
-                Figma, Git, GitHub, Bitbucket, NPM e Yarn.
+                React, React Native, Angular, JavaScript, Typescript, Figma,
+                Git, Bitbucket e Yarn.
               </span>
             </p>
-            <p>
+            <p data-aos="fade-up" data-aos-duration="1700">
               Também estudo{" "}
-              <span>
-                Python, Java, SQL, IA - NodeRed / Jupyter, Agile Software Design
-                e UX/UI.
-              </span>{" "}
+              <span>Python, Java, SQL, Pl/SQL, Scrum, Kotlin e UX/UI.</span>{" "}
             </p>
           </TextContainer>
           <ImageContainer data-aos="zoom-in-right">

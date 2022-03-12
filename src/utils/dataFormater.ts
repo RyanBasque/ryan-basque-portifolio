@@ -1,5 +1,4 @@
 import { ExperienceDataType } from "../models/experienceData";
-import { ProjectDataType } from './../models/projectsData';
 
 export const experienceFormatter = (data: ExperienceDataType[]) => {
   const response: ExperienceDataType[] = [];
@@ -16,14 +15,3 @@ export const experienceFormatter = (data: ExperienceDataType[]) => {
 
   return response.sort(compare);
 }
-
-export const projectsDataFormatter = (data: ProjectDataType[]) => {
-  const response: ProjectDataType[] = []; 
-  
-  for (let value in data) {
-    response.push({ ...data[value], id: value });
-  }
-
-  return response;
-}
-

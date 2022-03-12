@@ -2,26 +2,17 @@ import React, { useEffect, useState } from "react";
 
 import { toast } from "react-toastify";
 
-import {
-  HomeFirstView,
-  HomeSecondView,
-  HomeThirdView,
-} from "../../components/molecules";
+import { HomeFirstView, HomeSecondView } from "../../components/molecules";
 import { PageDefault } from "../../components/organisms";
 import { ExperienceDataType } from "../../models/experienceData";
-import { ProjectDataType } from "./../../models/projectsData";
 
 import { getData } from "../../services/firebase";
-import {
-  experienceFormatter,
-  projectsDataFormatter,
-} from "./../../utils/dataFormater";
+import { experienceFormatter } from "./../../utils/dataFormater";
 
 const Home = () => {
   const [experienceData, setExperienceData] = useState<ExperienceDataType[]>(
     []
   );
-  const [projectsData, setProjectsData] = useState<ProjectDataType[]>([]);
   const [fadeBlur, setFadeBlur] = useState<boolean>(false);
   const [showBlack, setShowBlack] = useState<boolean>(false);
 
@@ -29,10 +20,6 @@ const Home = () => {
     try {
       getData("experience-data", (data: ExperienceDataType[]) => {
         setExperienceData(experienceFormatter(data));
-      });
-
-      getData("projects", (data: ProjectDataType[]) => {
-        setProjectsData(projectsDataFormatter(data));
       });
     } catch (error: any) {
       toast("Ops! Ocorreu um erro ;(", {
@@ -77,7 +64,6 @@ const Home = () => {
     <PageDefault fadeHeaderBlur={fadeBlur} showHeaderInBlack={showBlack}>
       <HomeFirstView />
       <HomeSecondView data={experienceData} />
-      {/* <HomeThirdView data={projectsData} /> */}
     </PageDefault>
   );
 };
