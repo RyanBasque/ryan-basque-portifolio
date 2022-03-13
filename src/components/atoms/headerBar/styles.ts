@@ -56,4 +56,8 @@ export const Hamburger = styled.label`
     @media(min-width: 750px) {
         display: none;
     }
+
+    .bar {
+        transition: background 1s;
+    }
 `;

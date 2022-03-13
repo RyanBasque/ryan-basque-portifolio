@@ -29,9 +29,11 @@ export const PageHeaderContainer = styled.header<HeaderBarProps>`
     svg {
         color: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
     }
-`;
 
-export const PageDefaultHeaderHamburger = styled.div``;
+    .bar {
+        background: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
+    }
+`;
 
 export const PageMainContainer = styled.main`
     height: 100vh;

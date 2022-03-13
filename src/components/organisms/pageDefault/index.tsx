@@ -1,11 +1,7 @@
 import React, { Fragment } from "react";
 import { Contacts, HeaderBar } from "../../atoms";
 
-import {
-  PageDefaultHeaderHamburger,
-  PageHeaderContainer,
-  PageMainContainer,
-} from "./styles";
+import { PageHeaderContainer, PageMainContainer } from "./styles";
 import { PageDefaultProps } from "./types";
 
 const PageDefault = ({
@@ -23,7 +19,7 @@ const PageDefault = ({
     document.querySelector("#barThree");
 
     if (header && target.checked) {
-      header.style.height = "100px";
+      header.style.height = "85px";
     } else if (header) {
       header.style.height = "45px";
     }
