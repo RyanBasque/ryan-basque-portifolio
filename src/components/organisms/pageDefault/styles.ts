@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 interface HeaderBarProps {
-    showBlur: boolean | undefined;
-    showBlack: boolean | undefined;
+    showBlur?: boolean;
+    showBlack?: boolean;
 }
 
 export const PageHeaderContainer = styled.header<HeaderBarProps>`
@@ -10,20 +10,28 @@ export const PageHeaderContainer = styled.header<HeaderBarProps>`
     background-color: ${({ showBlack }) => (showBlack) && 'rgba(0, 0, 0, 0.3)'};
     z-index: 10;
 
-    height: auto;
+    height: 45px;
     width: 100%;
 
+    overflow: hidden;
+
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
 
     position: fixed;
 
     padding: 10px 25px;
 
-    transition: background-color 0.5s;
+    transition: background-color, height, 0.5s;
 
     color: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
+
+    svg {
+        color: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
+    }
 `;
+
+export const PageDefaultHeaderHamburger = styled.div``;
 
 export const PageMainContainer = styled.main`
     height: 100vh;

@@ -1,15 +1,32 @@
-import React, { Fragment } from "react";
+import { Contacts } from "../";
 
-import { HeaderTitle } from "./styles";
+import {
+  HeaderContainer,
+  HeaderTitle,
+  Hamburger,
+  HamburgerInput,
+} from "./styles";
+import { HeaderBarProps } from "./types";
 
-const HeaderBar = () => {
+const HeaderBar = ({ handleExpandHeader }: HeaderBarProps) => {
   return (
-    <Fragment>
+    <HeaderContainer>
       <HeaderTitle>
         <b>Ryan</b>
         Basque
       </HeaderTitle>
-    </Fragment>
+      <HamburgerInput
+        type="checkbox"
+        id="headerCheckbox"
+        onChange={handleExpandHeader}
+      />
+      <Hamburger htmlFor="headerCheckbox">
+        <div data-aos="fade-down" data-aos-duration="1000" id="barOne" />
+        <div data-aos="fade-down" data-aos-duration="1200" id="barTwo" />
+        <div data-aos="fade-down" data-aos-duration="1400" id="barThree" />
+      </Hamburger>
+      <Contacts isPageDefault={false} />
+    </HeaderContainer>
   );
 };
 
