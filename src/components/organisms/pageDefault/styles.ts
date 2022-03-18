@@ -26,7 +26,7 @@ export const PageHeaderContainer = styled.header<HeaderBarProps>`
 
     padding: 10px 25px;
 
-    transition: background-color, height, 0.5s;
+    transition: background-color 0.5s;
 
     color: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
 
@@ -34,8 +34,9 @@ export const PageHeaderContainer = styled.header<HeaderBarProps>`
         color: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
     }
 
-    .bar {
+    label div {
         background: ${({ showBlack }) => showBlack ? `${colors.white}` : `${colors.black}`};
+        transition: background-color 0.5s;
     }
 `;
 

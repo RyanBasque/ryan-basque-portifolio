@@ -7,6 +7,7 @@ import {
   HamburgerInput,
 } from "./styles";
 import { HeaderBarProps } from "./types";
+import "./animation.css";
 
 const HeaderBar = ({ handleExpandHeader }: HeaderBarProps) => {
   return (

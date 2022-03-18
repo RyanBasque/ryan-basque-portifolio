@@ -4,6 +4,11 @@ import { colors } from '../../../styles/colors';
 export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
+
+    svg {
+        transition: background 0.5s;
+        background: ${colors.black} ;
+    }
 `;
 
 export const HeaderTitle = styled.h1`
@@ -53,15 +58,11 @@ export const Hamburger = styled.label`
         background: ${colors.black};
 
         position: relative;
+
+        background-color: ${colors.black};
     }
     
-    -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 
     @media(min-width: 750px) {

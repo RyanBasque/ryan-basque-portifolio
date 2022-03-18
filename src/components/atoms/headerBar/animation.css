@@ -1,0 +1,19 @@
+.open div:nth-child(1) {
+  top: 5px !important;
+  -webkit-transform: rotate(50deg) !important;
+  -moz-transform: rotate(50deg) !important;
+  -o-transform: rotate(50deg) !important;
+  transform: rotate(50deg) !important;
+}
+
+.open div:nth-child(2) {
+  opacity: 0 !important;
+}
+
+.open div:nth-child(3) {
+  top: -12.6px !important;
+  -webkit-transform: rotate(-50deg) !important;
+  -moz-transform: rotate(-50deg) !important;
+  -o-transform: rotate(-50deg) !important;
+  transform: rotate(-50deg) !important;
+}
