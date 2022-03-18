@@ -51,7 +51,18 @@ export const Hamburger = styled.label`
         height: 2px;
 
         background: ${colors.black};
+
+        position: relative;
     }
+    
+    -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
 
     @media(min-width: 750px) {
         display: none;

@@ -13,6 +13,10 @@ export const PageHeaderContainer = styled.header<HeaderBarProps>`
     height: 45px;
     width: 100%;
 
+    @media(min-width: 750px) {
+        height: 45px !important;
+    }
+
     overflow: hidden;
 
     display: flex;

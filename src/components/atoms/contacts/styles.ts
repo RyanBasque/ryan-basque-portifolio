@@ -15,6 +15,10 @@ export const HeaderNav = styled.div<HeaderNavProps>`
     ul {
       justify-content: flex-end;
     }
+
+    @media(min-width: 750px) {
+      display: none;
+    }
   `
   }
 

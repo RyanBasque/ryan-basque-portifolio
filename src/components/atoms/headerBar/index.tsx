@@ -21,24 +21,9 @@ const HeaderBar = ({ handleExpandHeader }: HeaderBarProps) => {
         onChange={handleExpandHeader}
       />
       <Hamburger htmlFor="headerCheckbox">
-        <div
-          data-aos="fade-down"
-          data-aos-duration="1000"
-          className="bar"
-          id="barOne"
-        />
-        <div
-          data-aos="fade-down"
-          data-aos-duration="1200"
-          className="bar"
-          id="barTwo"
-        />
-        <div
-          data-aos="fade-down"
-          data-aos-duration="1400"
-          className="bar"
-          id="barThree"
-        />
+        <div data-aos="fade-down" data-aos-duration="1000" />
+        <div data-aos="fade-down" data-aos-duration="1200" />
+        <div data-aos="fade-down" data-aos-duration="1400" />
       </Hamburger>
       <Contacts isPageDefault={false} />
     </HeaderContainer>
