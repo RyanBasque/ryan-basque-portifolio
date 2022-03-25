@@ -7,7 +7,6 @@ export const HeaderContainer = styled.div`
 
     svg {
         transition: background 0.5s;
-        background: ${colors.black} ;
     }
 `;
 
