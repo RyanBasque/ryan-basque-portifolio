@@ -33,8 +33,8 @@ const HomeFirstView = () => {
               , curioso e determinado.
             </p>
             <p data-aos="fade-up" data-aos-duration="1500">
-              Estudo programação web desde os 16 anos, atualmente com 19 e me
-              formando na <span>FIAP</span> com conhecimentos avançados em{" "}
+              Estudo programação web desde os 16 anos, atualmente com 22 e me
+              formado na <span>FIAP - Análise e Desenvolvimento de Sistemas</span> com conhecimentos avançados em{" "}
               <span>
                 React, React Native, Angular, JavaScript, Typescript, Figma,
                 Git, Bitbucket.
