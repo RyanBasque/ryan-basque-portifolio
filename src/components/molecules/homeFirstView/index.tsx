@@ -25,21 +25,40 @@ const HomeFirstView = () => {
         <ResponsiveContainer>
           <TextContainer>
             <h1 data-aos="fade-up" data-aos-duration="500">
-              E aí, eu sou o <span>&lt;Ryan Basque/&gt;</span><br />
-              e <span>trago ideias à vida</span> com código e criatividade.
+              Olá, sou o <span>&lt;Ryan Basque/&gt;</span>
+              <br />e transformo
+              <span> visão de produto em experiências digitais</span>{" "}
+              escaláveis.
             </h1>
             <p data-aos="fade-up" data-aos-duration="1000">
-              Desenvolvedor <span>Full-Stack</span> com pegada de produto, apaixonado por
-              <span>UX/UI</span>, experiências digitais e boas interfaces.
+              Sou um desenvolvedor <span>Full-Stack</span>, especializado em{" "}
+              <span>React</span> e <span>React Native</span>, com forte
+              orientação a<span> UX/UI</span> e design centrado no usuário.
+              Tenho experiência consolidada na indústria financeira, construindo{" "}
+              <span>
+                soluções digitais robustas em ambientes de alta performance e
+                escalabilidade
+              </span>
+              .
             </p>
             <p data-aos="fade-up" data-aos-duration="1500">
-              Atuo na linha de frente da <span>tecnologia financeira</span>, com foco em
-              soluções escaláveis e intuitivas. Trabalho atualmente na Trademaster,
-              onde crio jornadas digitais para crédito B2B.
+              Tenho experiência sólida em projetos de{" "}
+              <span>tecnologia financeira</span>, contribuindo para a criação de{" "}
+              <span>jornadas digitais escaláveis</span> e<span>intuitivas</span>
+              . Meu background técnico combina{" "}
+              <span>desenvolvimento mobile</span>,<span>interfaces ricas</span>{" "}
+              e uma <span>mentalidade centrada no usuário</span>.
             </p>
             <p data-aos="fade-up" data-aos-duration="1700">
-              Domínio de ferramentas como <span>React, React Native, Typescript, Figma</span>,
-              e sempre em movimento, aprendendo sobre <span>Python, Kotlin, banco de dados e IA</span>.
+              <span>Tenho domínio técnico</span> em <span>React</span>,{" "}
+              <span>React Native</span>, <span>TypeScript</span> e{" "}
+              <span>Figma</span>, além de estar em constante evolução com{" "}
+              <span>Python</span>, <span>Kotlin</span>,{" "}
+              <span>bancos de dados</span> e aplicações de{" "}
+              <span>Inteligência Artificial</span>. Atuo com uma visão de
+              produto focada em <span>UX/UI estratégico</span>,{" "}
+              <span>escalabilidade</span> e{" "}
+              <span>entregas com alto impacto</span>.
             </p>
           </TextContainer>
           <ImageContainer data-aos="zoom-in-right">

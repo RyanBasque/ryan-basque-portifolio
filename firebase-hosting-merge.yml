@@ -1,0 +1,32 @@
+name: Deploy to Firebase Hosting on merge
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+          
+      - name: Install Dependencies
+        run: |
+          yarn install --frozen-lockfile
+          
+      - name: Build
+        run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
+          yarn build
+          
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RYAN_BASQUE_PORTIFOLIO_FA8F4 }}
+          channelId: live
+          projectId: ryan-basque-portifolio-fa8f4
