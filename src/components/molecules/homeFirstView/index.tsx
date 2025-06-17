@@ -25,24 +25,21 @@ const HomeFirstView = () => {
         <ResponsiveContainer>
           <TextContainer>
             <h1 data-aos="fade-up" data-aos-duration="500">
-              Oi, meu nome é <span>&lt;Ryan Basque/&gt;</span> <br /> Eu{" "}
-              <span>penso e construo</span> interfaces de sistemas.
+              E aí, eu sou o <span>&lt;Ryan Basque/&gt;</span><br />
+              e <span>trago ideias à vida</span> com código e criatividade.
             </h1>
             <p data-aos="fade-up" data-aos-duration="1000">
-              Desenvolvedor Full-stack, entusiasta à área de <span>UX/UI</span>{" "}
-              , curioso e determinado.
+              Desenvolvedor <span>Full-Stack</span> com pegada de produto, apaixonado por
+              <span>UX/UI</span>, experiências digitais e boas interfaces.
             </p>
             <p data-aos="fade-up" data-aos-duration="1500">
-              Estudo programação web desde os 16 anos, atualmente com 22 e me
-              formado na <span>FIAP - Análise e Desenvolvimento de Sistemas</span> com conhecimentos avançados em{" "}
-              <span>
-                React, React Native, Angular, JavaScript, Typescript, Figma,
-                Git, Bitbucket.
-              </span>
+              Atuo na linha de frente da <span>tecnologia financeira</span>, com foco em
+              soluções escaláveis e intuitivas. Trabalho atualmente na Trademaster,
+              onde crio jornadas digitais para crédito B2B.
             </p>
             <p data-aos="fade-up" data-aos-duration="1700">
-              Também estudo{" "}
-              <span>Python, Java, SQL, Pl/SQL, Scrum, Kotlin.</span>{" "}
+              Domínio de ferramentas como <span>React, React Native, Typescript, Figma</span>,
+              e sempre em movimento, aprendendo sobre <span>Python, Kotlin, banco de dados e IA</span>.
             </p>
           </TextContainer>
           <ImageContainer data-aos="zoom-in-right">
